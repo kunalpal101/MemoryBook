@@ -1,4 +1,5 @@
-var back_uri = "http://127.0.0.1:4000";
+//var back_uri = "http://127.0.0.1:4000";
+var back_uri = "https://smoggy-boa-sun-hat.cyclic.app";
 
 function date_now() {
   if (document.querySelector("#date").value == "") {
