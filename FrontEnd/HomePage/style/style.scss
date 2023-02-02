@@ -49,33 +49,6 @@ h1 {
   margin-bottom: 30px;
   border-radius: 10px;
 }
-// input[type="text"],
-// input[type="password"],
-// input[type="date"],
-// input[type="datetime"],
-// input[type="email"],
-// input[type="number"],
-// input[type="search"],
-// input[type="tel"],
-// input[type="time"],
-// input[type="url"],
-// textarea,
-// select {
-//   background: rgba(255, 255, 255, 0.1);
-//   border: none;
-//   font-size: 16px;
-//   height: auto;
-//   margin: 0;
-//   outline: 0;
-//   padding: 15px;
-//   width: 100%;
-//   /*background-color: #e8eeef;*/
-//   background-color: #b8e0d4;
-//   color: #8a97a0;
-//   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-//   margin-bottom: 30px;
-//   border-radius: 10px;
-// }
 
 .input-checkbox {
   margin: 0 4px 8px 0;
@@ -85,12 +58,6 @@ h1 {
 .input-radio {
   margin: 0 4px 8px 0;
 }
-
-// select {
-//   padding: 6px;
-//   height: 32px;
-//   border-radius: 2px;
-// }
 
 .submit-button {
   padding: 19px 39px 18px 39px;
@@ -167,82 +134,6 @@ h1 {
   z-index: 1060 !important;
 }
 
-// .listset {
-//   display: flex;
-//   flex-direction: column;
-//   vertical-align: middle;
-//   align-items: center;
-//   background-color: #ffd4d4;
-// }
-
-// #listset {
-//   width: 100%;
-// }
-
-// .listbody {
-//   display: flex;
-//   flex-direction: column;
-//   vertical-align: middle;
-//   align-items: center;
-//   border: 1px solid black;
-//   margin: 4rem 0rem;
-//   padding: 3rem;
-//   background-color: white;
-//   position: relative;
-//   width: 100%;
-//   transition: all 0.4s;
-// }
-
-// .listbody:hover {
-//   background-color: #011327;
-//   transition: all 0.4s;
-//   .listhead {
-//     color: white;
-//   }
-//   .listview {
-//     background-color: $var_body_color;
-//     color: white;
-//   }
-// }
-
-// .listdate {
-//   font-weight: 400;
-//   font-family: "Poppins";
-//   color: white;
-//   position: absolute;
-//   top: -15%;
-//   left: 7%;
-//   background-color: $var_body_color;
-//   padding: 1rem;
-//   border: 1px solid black;
-// }
-
-// .listhead {
-//   /* border: 1px solid black; */
-//   position: relative;
-//   text-align: center;
-//   padding: 1rem;
-//   width: 100%;
-//   margin-bottom: 3rem;
-//   font-family: "Poppins", sans-serif;
-//   font-size: 25px;
-//   font-weight: bold;
-// }
-
-// .listview {
-//   border: 1px solid black;
-//   background-color: #011327;
-//   color: white;
-//   bottom: 10px;
-//   right: 20px;
-//   position: absolute;
-//   padding: 1.4rem 1.2rem;
-//   font-weight: 400;
-//   font-family: "Poppins";
-//   border-radius: 50%;
-//   cursor: pointer;
-// }
-
 .col-4 {
   display: flex;
   justify-content: center;
@@ -251,12 +142,6 @@ h1 {
 }
 
 /*Card Layout styling start*/
-// * {
-//   margin: 0;
-//   padding: 0;
-//   -webkit-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
 
 h1 {
   font-size: 2.5rem !important;
@@ -505,54 +390,6 @@ svg rect {
     }
   }
 }
-
-// .search-model-body {
-//   margin: 1rem 0rem;
-
-//   padding: 3rem 0rem;
-//   .search {
-//     width: 100%;
-//     position: relative;
-//     display: flex;
-//   }
-//   .searchTerm {
-//     width: 100%;
-//     border: 5px solid #d3d3d3;
-//     border-right: none;
-//     padding: 5px 5px;
-//     height: 100%;
-//     //border-radius: 5px 0 0 5px;
-//     border-radius: 10px;
-//     outline: none;
-//     box-shadow: 0 4px 9px rgb(0 0 0 / 37%);
-//     color: $var3;
-//     &:focus {
-//       color: $var2;
-//     }
-//   }
-//   .searchButton {
-//     padding: 10px;
-//     width: 106px;
-//     box-shadow: 0 0 2px #2692dd inset;
-//     border-radius: 9px;
-//     //width: 40px;
-//     //height: 36px;
-//     border: 1px solid $var2;
-//     background: $var2;
-//     text-align: center;
-//     color: $var4;
-//     border-radius: 0 5px 5px 0;
-//     cursor: pointer;
-//     font-size: 20px;
-//   }
-//   .wrap {
-//     width: 30%;
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//   }
-// }
 
 /*Navbar Styling start*/
 * {
