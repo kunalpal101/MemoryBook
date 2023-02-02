@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 function start_prg() {
-  app.listen(process.env.PORT, () => {
+  app.listen(process.env.PORT || 4000, () => {
     console.log("Listening on port 4000...");
   });
 
