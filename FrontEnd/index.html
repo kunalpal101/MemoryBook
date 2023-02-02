@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memory Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <section class="user">
+      <div class="user_options-container">
+        <div class="user_options-text">
+          <div class="user_options-unregistered">
+            <h2 class="user_unregistered-title">Don't have an account?</h2>
+            <p class="user_unregistered-text"></p>
+            <button class="user_unregistered-signup" id="signup-button">
+              Sign up
+            </button>
+          </div>
+
+          <div class="user_options-registered">
+            <h2 class="user_registered-title">Have an account?</h2>
+            <p class="user_registered-text"></p>
+            <button class="user_registered-login" id="login-button">
+              Login
+            </button>
+          </div>
+        </div>
+
+        <div class="user_options-forms" id="user_options-forms">
+          <div class="user_forms-login">
+            <h2 class="forms_title">Login</h2>
+            <form class="forms_form">
+              <fieldset class="forms_fieldset">
+                <div class="forms_field">
+                  <input
+                    placeholder="Username"
+                    class="forms_field-input"
+                    id="log-username"
+                    required
+                    autofocus
+                  />
+                </div>
+                <div class="forms_field">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="forms_field-input"
+                    id="log-password"
+                    required
+                  />
+                </div>
+              </fieldset>
+              <div class="forms_buttons">
+                <button type="button" class="forms_buttons-forgot">
+                  Forgot password?
+                </button>
+                <input
+                  type="button"
+                  value="Log In"
+                  class="forms_buttons-action"
+                  id="log-in"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="user_forms-signup">
+            <h2 class="forms_title">Sign Up</h2>
+            <form class="forms_form">
+              <fieldset class="forms_fieldset">
+                <div class="forms_field">
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    class="forms_field-input"
+                    required
+                    id="sign-user"
+                  />
+                </div>
+                <div class="forms_field">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="forms_field-input"
+                    required
+                    id="sign-pass"
+                  />
+                </div>
+                <div class="forms_field">
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    class="forms_field-input"
+                    required
+                    id="sign-cnf-pass"
+                  />
+                </div>
+              </fieldset>
+              <div class="forms_buttons">
+                <input
+                  type="button"
+                  value="Sign up"
+                  class="forms_buttons-action"
+                  id="signup-btn"
+                  onclick="signup()"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script/app.js"></script>
+  </body>
+</html>

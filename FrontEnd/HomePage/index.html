@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <!-- <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0" /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- For Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <input type="checkbox" id="nav-check" />
+      <div class="nav-header">
+        <div id="nav-title" class="nav-title">JoGeek</div>
+      </div>
+      <div class="nav-btn">
+        <label for="nav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="nav-links">
+        <a
+          href=""
+          onclick="generate()"
+          data-bs-toggle="modal"
+          data-bs-target="#mem-list-model"
+          >My memories</a
+        >
+
+        <a href="" data-bs-toggle="modal" data-bs-target="#friend-search-model"
+          >Check Friend's memories</a
+        >
+      </div>
+    </div>
+
+    <!-- Model for loading own memory -->
+    <div
+      class="modal fade"
+      id="mem-list-model"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">
+              <!-- if something doesn't work add id="exampleModalLabel" in top h1 -->Your
+              beautiful memories
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="memory-list-model">
+              <div id="loader-block" class="loader loader--style6" title="5">
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="80px"
+                  height="80px"
+                  viewBox="0 0 24 30"
+                  style="enable-background: new 0 0 50 50"
+                  xml:space="preserve"
+                >
+                  <rect x="0" y="13" width="4" height="5" fill="#333">
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      values="5;21;5"
+                      begin="0s"
+                      dur="0.9s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      values="13; 5; 13"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+                  <rect x="10" y="13" width="4" height="5" fill="#333">
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      values="5;21;5"
+                      begin="0.15s"
+                      dur="0.9s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      values="13; 5; 13"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+                  <rect x="20" y="13" width="4" height="5" fill="#333">
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      values="5;21;5"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      values="13; 5; 13"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+                </svg>
+              </div>
+              <div id="own-mem-wrapper" class="wrapper blur-effect">
+                <div id="cols" class="cols"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Search box Model for loading friend's memory -->
+
+    <div
+      class="modal fade"
+      id="friend-search-model"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Search Your friend's memories
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body search-model-full">
+            <div class="search-model-body">
+              <div class="wrapper-1">
+                <div style="position: relative; padding: 20px 50px">
+                  <input
+                    type="text"
+                    class="input"
+                    id="frndName"
+                    placeholder="Who are you looking for?"
+                  />
+                  <input
+                    type="button"
+                    value="search"
+                    id="liveAlertBtn"
+                    class="search-btn"
+                    onclick="fetchfrndmem()"
+                  />
+                </div>
+                <div id="liveAlertPlaceholder"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actual Model for loading friend's memory -->
+    <div
+      class="modal fade"
+      id="mem-friend-list-model"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="friend-head">
+              <!-- if something doesn't work add id="exampleModalLabel" in top h1 -->
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="memory-list-model">
+              <div id="loader-block-2" class="loader loader--style6" title="5">
+                <svg
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="80px"
+                  height="80px"
+                  viewBox="0 0 24 30"
+                  style="enable-background: new 0 0 50 50"
+                  xml:space="preserve"
+                >
+                  <rect x="0" y="13" width="4" height="5" fill="#333">
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      values="5;21;5"
+                      begin="0s"
+                      dur="0.9s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      values="13; 5; 13"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+                  <rect x="10" y="13" width="4" height="5" fill="#333">
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      values="5;21;5"
+                      begin="0.15s"
+                      dur="0.9s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      values="13; 5; 13"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+                  <rect x="20" y="13" width="4" height="5" fill="#333">
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      values="5;21;5"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      values="13; 5; 13"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+                </svg>
+              </div>
+              <div id="friend-mem-wrapper" class="wrapper blur-effect">
+                <div id="friend-cols" class="cols"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div
+      class="modal fade"
+      id="mem-friend-list-model"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Search Your friend's memories
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body search-model-full">
+            <div class="search-model-body">
+              <div class="wrap">
+                <div class="search">
+                  <input
+                    type="text"
+                    class="searchTerm"
+                    placeholder="What are you looking for?"
+                  />
+                  <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Main Form html starts here -->
+    <div class="row">
+      <div class="col-md-12">
+        <form method="post">
+          <h1>Tell me about your memory</h1>
+
+          <fieldset class="fieldset-class">
+            <legend class="legend-class">
+              <span class="number">1</span> Date and Time
+            </legend>
+
+            <label class="label-class" for="name">Date:</label>
+            <input type="date" class="input-area" id="date" name="user_name" />
+            <input
+              type="checkbox"
+              id="development"
+              value="interest_development"
+              name="user_interest"
+              onclick="date_now()"
+              class="input-checkbox"
+            /><label class="label-class light" for="development"
+              >Set today's date</label
+            ><br />
+
+            <label class="label-class" for="email">Time:</label>
+            <input type="time" id="time" name="user_email" class="input-area" />
+            <!-- <input
+              type="checkbox"
+              id="time-block"
+              value="interest_development"
+              name="user_interest"
+              onclick="time_now()"
+            /><label class="light" for="time-block">Set current time</label> -->
+            <br />
+
+            <!-- <label for="password">Password:</label>
+            <input type="password" id="password" name="user_password" /> -->
+            <legend class="legend-class">
+              <span class="number">2</span> Privacy
+            </legend>
+
+            <label class="label-class">Privacy mode: </label>
+            <input
+              type="radio"
+              id="private_1"
+              value="private"
+              name="privacy"
+              checked="true"
+              class="input-radio"
+            /><label for="private_1" class="label-class light">Only Me</label
+            ><br />
+            <input
+              type="radio"
+              id="private_2"
+              value="global"
+              name="privacy"
+              class="input-radio"
+            /><label for="private_2" class="label-class light">Everyone</label>
+          </fieldset>
+          <fieldset class="fieldset-class">
+            <legend class="legend-class">
+              <span class="number">3</span> Your Profile
+            </legend>
+
+            <label class="label-class" for="bio">Memory Header</label>
+            <input
+              class="input-area"
+              type="text"
+              id="mem-header"
+              name="user_email"
+            />
+            <label class="label-class" for="bio">Describe your memory</label>
+            <textarea
+              style="height: 12rem"
+              class="input-area"
+              id="mem-desc"
+              name="user_bio"
+            ></textarea>
+          </fieldset>
+          <!-- <fieldset>
+            <label for="job">Job Role:</label>
+            <select id="job" name="user_job">
+              <optgroup label="Web">
+                <option value="frontend_developer">Front-End Developer</option>
+                <option value="php_developer">PHP Developer</option>
+                <option value="python_developer">Python Developer</option>
+                <option value="rails_developer">Rails Developer</option>
+                <option value="web_designer">Web Designer</option>
+                <option value="wordpress_developer">Wordpress Developer</option>
+              </optgroup>
+              <optgroup label="Mobile">
+                <option value="android_developer">Android Developer</option>
+                <option value="ios_developer">IOS Developer</option>
+                <option value="mobile_designer">Mobile Designer</option>
+              </optgroup>
+              <optgroup label="Business">
+                <option value="business_owner">Business Owner</option>
+                <option value="freelancer">Freelancer</option>
+              </optgroup>
+            </select>
+
+            <label>Interests:</label>
+            <input
+              type="checkbox"
+              id="development"
+              value="interest_development"
+              name="user_interest"
+            /><label class="light" for="development">Development</label><br />
+            <input
+              type="checkbox"
+              id="design"
+              value="interest_design"
+              name="user_interest"
+            /><label class="light" for="design">Design</label><br />
+            <input
+              type="checkbox"
+              id="business"
+              value="interest_business"
+              name="user_interest"
+            /><label class="light" for="business">Business</label>
+          </fieldset> -->
+
+          <button onclick="submit_mem()" type="button" class="submit-button">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script/app.js"></script>
+  </body>
+</html>
