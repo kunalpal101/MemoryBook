@@ -4,12 +4,8 @@ swipeAnimation();
 
 //Backend API
 //var back_uri = "http://127.0.0.1:4000";
-<<<<<<< HEAD
-var back_uri = "https://smoggy-boa-sun-hat.cyclic.app";
-=======
 
 const back_uri = window.location.href.replace(/\/$/, "");
->>>>>>> dev
 
 const login_btn = document.getElementById("log-in");
 
