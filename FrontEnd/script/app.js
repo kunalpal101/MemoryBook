@@ -3,7 +3,9 @@
 swipeAnimation();
 
 //Backend API
-var back_uri = "http://127.0.0.1:4000";
+//var back_uri = "http://127.0.0.1:4000";
+
+const back_uri = window.location.href.replace(/\/$/, "");
 
 const login_btn = document.getElementById("log-in");
 

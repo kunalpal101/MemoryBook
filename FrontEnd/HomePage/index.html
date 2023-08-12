@@ -162,16 +162,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn">Save changes</button>
-          </div> -->
         </div>
       </div>
     </div>
@@ -330,48 +320,6 @@
       </div>
     </div>
 
-    <!-- <div
-      class="modal fade"
-      id="mem-friend-list-model"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Search Your friend's memories
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body search-model-full">
-            <div class="search-model-body">
-              <div class="wrap">
-                <div class="search">
-                  <input
-                    type="text"
-                    class="searchTerm"
-                    placeholder="What are you looking for?"
-                  />
-                  <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
     <!-- Main Form html starts here -->
     <div class="row">
       <div class="col-md-12">
@@ -398,13 +346,6 @@
 
             <label class="label-class" for="email">Time:</label>
             <input type="time" id="time" name="user_email" class="input-area" />
-            <!-- <input
-              type="checkbox"
-              id="time-block"
-              value="interest_development"
-              name="user_interest"
-              onclick="time_now()"
-            /><label class="light" for="time-block">Set current time</label> -->
             <br />
 
             <!-- <label for="password">Password:</label>
@@ -443,59 +384,28 @@
               id="mem-header"
               name="user_email"
             />
-            <label class="label-class" for="bio">Describe your memory</label>
+            <label class="label-class" for="bio">Describe your memory</label
+            ><input
+              style="border-style: none"
+              disabled
+              size="12"
+              value="Character Limit:"
+            /><input
+              style="border-style: none"
+              disabled
+              value="400"
+              id="counter"
+            />
             <textarea
               style="height: 12rem"
               class="input-area"
               id="mem-desc"
               name="user_bio"
+              onkeyup="textCounter(this,'counter',400);"
             ></textarea>
           </fieldset>
-          <!-- <fieldset>
-            <label for="job">Job Role:</label>
-            <select id="job" name="user_job">
-              <optgroup label="Web">
-                <option value="frontend_developer">Front-End Developer</option>
-                <option value="php_developer">PHP Developer</option>
-                <option value="python_developer">Python Developer</option>
-                <option value="rails_developer">Rails Developer</option>
-                <option value="web_designer">Web Designer</option>
-                <option value="wordpress_developer">Wordpress Developer</option>
-              </optgroup>
-              <optgroup label="Mobile">
-                <option value="android_developer">Android Developer</option>
-                <option value="ios_developer">IOS Developer</option>
-                <option value="mobile_designer">Mobile Designer</option>
-              </optgroup>
-              <optgroup label="Business">
-                <option value="business_owner">Business Owner</option>
-                <option value="freelancer">Freelancer</option>
-              </optgroup>
-            </select>
-
-            <label>Interests:</label>
-            <input
-              type="checkbox"
-              id="development"
-              value="interest_development"
-              name="user_interest"
-            /><label class="light" for="development">Development</label><br />
-            <input
-              type="checkbox"
-              id="design"
-              value="interest_design"
-              name="user_interest"
-            /><label class="light" for="design">Design</label><br />
-            <input
-              type="checkbox"
-              id="business"
-              value="interest_business"
-              name="user_interest"
-            /><label class="light" for="business">Business</label>
-          </fieldset> -->
-
           <button onclick="submit_mem()" type="button" class="submit-button">
-            Sign Up
+            Submit
           </button>
         </form>
       </div>

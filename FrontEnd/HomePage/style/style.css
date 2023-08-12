@@ -167,10 +167,12 @@ h1 {
   width: calc(25% - 2rem);
   margin: 1rem;
   cursor: pointer;
+  position: relative;
 }
 .memory-list-model .wrapper .card-container {
   transform-style: preserve-3d;
   perspective: 1000px;
+  position: inherit;
 }
 .memory-list-model .wrapper .front,
 .memory-list-model .wrapper .back {
@@ -179,14 +181,14 @@ h1 {
   border-radius: 10px;
   background-position: center;
   transition: transform 3s cubic-bezier(0.4, 0.2, 0.2, 1);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   text-align: center;
   min-height: 330px;
   height: auto;
   border-radius: 10px;
   color: #fff;
   font-size: 1rem;
+  position: inherit;
 }
 .memory-list-model .wrapper .back {
   background: #e81cff;
@@ -204,7 +206,6 @@ h1 {
   display: block;
   opacity: 0.6;
   background-color: #000;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 10px;
 }
@@ -402,7 +403,7 @@ body {
     padding: 13px;
   }
   .nav > .nav-btn > label:hover,
-.nav #nav-check:checked ~ .nav-btn > label {
+  .nav #nav-check:checked ~ .nav-btn > label {
     background-color: rgba(0, 0, 0, 0.3);
   }
   .nav > .nav-btn > label > span {
