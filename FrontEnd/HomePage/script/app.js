@@ -90,9 +90,6 @@ function boom() {
 }
 
 async function generate() {
-  //document.getElementById("own-mem-wrapper").classList.add("blur-effect");
-  //document.getElementById("loader-block").setAttribute("visibility: visible");
-
   let response = await fetch(back_uri + "/fetchmem", {
     method: "POST",
     headers: {
@@ -163,13 +160,6 @@ const alert = (message, type) => {
   alertPlaceholder.append(wrapper);
 };
 
-// const alertTrigger = document.getElementById("liveAlertBtn");
-// if (alertTrigger) {
-//   alertTrigger.addEventListener("click", () => {
-//     alert("Nope, not working yet", "danger");
-//   });
-// }
-
 //fetching friends memory
 async function fetchfrndmem() {
   let frndName = document.getElementById("frndName").value;
@@ -215,6 +205,7 @@ async function fetchfrndmem() {
             "</p> <span>" +
             data[i].memories.date +
             "</span> </div> </div>" +
+            // "<div class='back' style='overflow:auto;'> <div class='inner'> <p>" +
             "<div class='back'> <div class='inner'> <p>" +
             data[i].memories.description +
             " </p></div> </div></div>";
@@ -243,4 +234,12 @@ async function fetchfrndmem() {
   }
 }
 
-//window.onload(generate());
+function textCounter(field, field2, maxlimit) {
+  var countfield = document.getElementById(field2);
+  if (field.value.length > maxlimit) {
+    field.value = field.value.substring(0, maxlimit);
+    return false;
+  } else {
+    countfield.value = maxlimit - field.value.length;
+  }
+}

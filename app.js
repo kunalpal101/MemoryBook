@@ -60,33 +60,6 @@ const LoginSchema = new Schema(
 
 let login = mongoose.model("login", LoginSchema);
 
-// POST /login gets urlencoded bodies
-
-// try {
-//   app.post("/login", function (req, res) {
-//     //res.send("welcome, " + req.body.username);
-//     login.findOne(
-//       { username: req.body.username, password: req.body.password },
-//       function (err, data) {
-//         if (err) return console.log("The error is " + err);
-//         if (data == null) {
-//           res.send({ Auth: "Decline" });
-//           console.log("Auth Decline");
-//         } else {
-//           res.send({
-//             Auth: "Success",
-//             username: req.body.username,
-//             password: req.body.password,
-//           });
-//           console.log(data);
-//         }
-//       }
-//     );
-//   });
-// } catch (err) {
-//   console.log("Error!");
-// }
-
 try {
   app.post("/login", function (req, res) {
     login.findOne({ username: req.body.username }, function (err, data) {
@@ -135,6 +108,7 @@ app.post("/signup", function (req, res) {
   });
 });
 
+// Maybe not required
 const SubmitSchema = new Schema({
   memoryList: {
     memories: [
@@ -159,20 +133,6 @@ app.post("/save", async function (req, res) {
     heading: req.body.heading,
     body: req.body.body,
   };
-
-  // console.log(
-  //   ele.username +
-  //     "\n" +
-  //     ele.time +
-  //     "\n" +
-  //     ele.date +
-  //     "\n" +
-  //     ele.privacy +
-  //     "\n" +
-  //     ele.heading +
-  //     "\n" +
-  //     ele.body
-  // );
 
   //let login = mongoose.model("login", SubmitSchema);
   login.findOneAndUpdate(
@@ -220,15 +180,3 @@ app.post("/fetchmem", async function (req, res) {
     //console.log(data.memoryList);
   });
 });
-
-// app.post("/fetchfrndmem", async function (req, res) {
-//   var val = await req.body;
-//   console.log("Username is " + val.username);
-
-//   login.findOne({ username: val.username }, async function (err, data) {
-//     if (err) return console.log(err);
-
-//     //console.log(data.memoryList);
-//     res.send(data.memoryList);
-//   });
-// });
